@@ -4,10 +4,13 @@
   namespace Peony\Engine;
 
   use Peony\Assets\Manager\AssetsManagerInterface;
+  use Peony\Engine\Path\Modifier\PathModifierInterface;
 
   final class Engine implements EngineInterface
   {
     private AssetsManagerInterface $assetsManager;
+
+    private ?PathModifierInterface $pathModifier;
 
 
     public function __construct(AssetsManagerInterface $assetsManager)
@@ -21,6 +24,9 @@
      */
     public function render(string $path, array $data) : string
     {
+      if ($this->pathModifier !== null) {
+        $path = $this->pathModifier->modify($path);
+      }
       ob_start();
       extract($data, EXTR_OVERWRITE);
       /** @noinspection PhpIncludeInspection */
@@ -33,5 +39,11 @@
     public function assetsManager() : AssetsManagerInterface
     {
       return $this->assetsManager;
+    }
+
+
+    public function setPathModifier(PathModifierInterface $modifier) : void
+    {
+      $this->pathModifier = $modifier;
     }
   }

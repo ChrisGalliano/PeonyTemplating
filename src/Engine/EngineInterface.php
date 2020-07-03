@@ -4,6 +4,7 @@
   namespace Peony\Engine;
 
   use Peony\Assets\Manager\AssetsManagerInterface;
+  use Peony\Engine\Path\Modifier\PathModifierInterface;
 
   interface EngineInterface
   {
@@ -14,4 +15,6 @@
 
 
     public function assetsManager() : AssetsManagerInterface;
+
+    public function setPathModifier(PathModifierInterface $modifier) : void;
   }

@@ -1,6 +1,6 @@
 {
   "name": "chrisgalliano/peony",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Peony is a lightweight PHP Templating Engine designed for the Pion Framework",
   "minimum-stability": "dev",
   "license": "MIT",
