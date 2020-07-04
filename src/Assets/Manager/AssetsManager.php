@@ -47,7 +47,7 @@
         $resourceHash = md5($rendered);
         if (!in_array($resourceHash, $renderedResources, true)) {
           $renderedResources[] = $resourceHash;
-          print $resource;
+          print $rendered;
         }
       }
     }
