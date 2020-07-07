@@ -1,6 +1,6 @@
 {
   "name": "chrisgalliano/peony",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Peony is a lightweight PHP Templating Engine designed for the Pion Framework",
   "minimum-stability": "dev",
   "license": "MIT",
@@ -17,7 +17,7 @@
   },
   "require": {
     "php": "7.4.*",
-    "chrisgalliano/pion": "dev-master"
+    "chrisgalliano/pion": "2.0.*"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"
