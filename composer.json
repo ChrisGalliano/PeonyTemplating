@@ -17,7 +17,7 @@
   },
   "require": {
     "php": "7.4.*",
-    "chrisgalliano/pion": "2.0.*"
+    "chrisgalliano/pion": "2.*"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master"
