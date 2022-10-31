@@ -9,10 +9,13 @@
   {
     private AssetsManagerInterface $assetsManager;
 
+    private string $prefix;
 
-    public function __construct(AssetsManagerInterface $assetsManager)
+
+    public function __construct(AssetsManagerInterface $assetsManager, string $prefix = "")
     {
       $this->assetsManager = $assetsManager;
+      $this->prefix = $prefix;
     }
 
 
@@ -23,9 +26,7 @@
     {
       ob_start();
       extract($data, EXTR_OVERWRITE);
-      /** @noinspection PhpIncludeInspection */
-      require $path;
-
+      require $this->prefix . $path;
       return ob_get_clean();
     }
 
